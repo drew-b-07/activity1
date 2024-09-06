@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', sans-serif;
+    
+}
+
+:root{
+    --main-font-size: 25px;
+    --main-font: fantasy;
+}
+
+body{
+    font-family: var(--main-font);
+    height: 100vh;
+}
+
+.form-container{
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+}
+
+.signin-container{
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container{
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

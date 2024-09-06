@@ -28,7 +28,7 @@
                 exit;
             }
 
-            unset($_SESSION["csrf_token"]);
+            unset($_SESSION['csrf_token']);
 
             $hash_password = md5($password);
 
@@ -56,7 +56,7 @@
                     echo "<script>alert('Invalid CSRF token.'); window.location.href = '../../../'; </script>";
                     exit;
                 }
-                unset($_SESSION["csrf_token"]);
+                unset($_SESSION['csrf_token']);
 
                 $stmt = $this->conn->prepare("SELECT * FROM user WHERE email = :email");
                 $stmt->execute(array(":email" => $email));
@@ -64,7 +64,7 @@
 
                 if($stmt->rowCount () == 1 && $userRow['password'] == md5($password)){
                     $activity = "Has Successfully Signed In.";
-                    $user_id = $userRow["id"];
+                    $user_id = $userRow['id'];
                     $this->logs($activity, $user_id);
 
                     $_SESSION['adminSession'] = $user_id;
@@ -82,7 +82,7 @@
 
         public function adminSignout()
         {
-            unset($_SESSION["adminSession"]);
+            unset($_SESSION['adminSession']);
             echo "<script>alert('Sign Out Successfully.'); window.location.href = '../../../'; </script>";
             exit;
         }
@@ -95,7 +95,7 @@
 
         public function isUserLoggedIn()
         {
-            if(isset($_SESSION["adminSession"])){
+            if(isset($_SESSION['adminSession'])){
                 return true;
             }
         }
