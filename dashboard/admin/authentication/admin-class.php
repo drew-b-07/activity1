@@ -102,7 +102,7 @@
 
         public function redirect()
         {
-            echo "<script>alert('Admin must login first.'); window.location.href = '../../../'; </script>";
+            echo "<script>alert('Admin must login first.'); window.location.href = '../../'; </script>";
             exit;
         }
 
